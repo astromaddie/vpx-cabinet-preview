@@ -12,10 +12,12 @@
   .seg { display: inline-flex; background: rgba(255,255,255,0.72); border: 1px solid rgba(0,0,0,0.12); border-radius: 8px; padding: 2px; backdrop-filter: blur(8px); }
   .seg button, #reset { font: inherit; border: 0; background: transparent; padding: 6px 12px; border-radius: 6px; cursor: pointer; color: inherit; }
   .seg button.on { background: #1d1d1f; color: #fff; }
-  #reset { background: rgba(255,255,255,0.72); border: 1px solid rgba(0,0,0,0.12); backdrop-filter: blur(8px); }
-  #reset:hover, .seg button:not(.on):hover { background: rgba(0,0,0,0.06); }
+  .plain { font: inherit; border: 0; padding: 6px 12px; border-radius: 6px; cursor: pointer; color: inherit; }
+  #reset, .plain { background: rgba(255,255,255,0.72); border: 1px solid rgba(0,0,0,0.12); backdrop-filter: blur(8px); }
+  #reset:hover, .plain:hover, .seg button:not(.on):hover { background: rgba(0,0,0,0.06); }
   select { max-width: 100%; font: inherit; padding: 5px 8px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.12); background: rgba(255,255,255,0.8); }
   #caption { max-width: 100%; box-sizing: border-box; overflow-wrap: anywhere; font-size: 12px; color: #3a3a3c; background: rgba(255,255,255,0.6); padding: 4px 9px; border-radius: 6px; align-self: flex-start; }
+  #angles { max-width: 100%; box-sizing: border-box; font-size: 12px; font-weight: 600; background: rgba(255,255,255,0.8); padding: 4px 9px; border-radius: 6px; align-self: flex-start; }
 </style>
 </head>
 <body>
@@ -24,9 +26,11 @@
   <div class="row">
     <div class="seg"><button data-variant="plunger">Plunger</button><button data-variant="launch-button">Launch Button</button></div>
     <button id="reset">Reset View</button>
+    <button id="sideview" class="plain">Side View</button>
     <select id="fits" hidden></select>
   </div>
   <div id="caption"></div>
+  <div id="angles" hidden></div>
 </div>
 <script src="data.js"></script>
 <script src="data-fits.js" onerror="void 0"></script>
